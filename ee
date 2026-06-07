@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Genuix — Brand Identity</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --midnight:#0D1520;
+  --gold:#C4952A;
+  --gold-lt:#E8C06A;
+  --gold-pale:#F5E6C0;
+  --ivory:#F7F0E4;
+  --ivory-dk:#EDE0C8;
+  --teal:#1A7A6E;
+  --graphite:#2E2E2E;
+  --muted:#8A8070;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--graphite);line-height:1.5}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.anim{opacity:0;animation:rise .9s ease forwards}
+
+/* ── HERO ── */
+.hero{
+  background:var(--midnight);
+  min-height:420px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:64px 40px 56px;
+  text-align:center;
+  position:relative;overflow:hidden;
+  animation:rise 1s ease forwards;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(196,149,42,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(196,149,42,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(196,149,42,.05) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+}
+
+/* Logo mark */
+.logomark{width:96px;height:96px;margin-bottom:28px;filter:drop-shadow(0 0 18px rgba(196,149,42,.18))}
+.wordmark{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-size:54px;
+  letter-spacing:14px;color:var(--ivory);text-transform:uppercase;line-height:1;
+  margin-bottom:18px;
+}
+.tagline{
+  font-family:'DM Sans',sans-serif;font-weight:300;font-size:13px;
+  letter-spacing:4px;color:var(--gold);text-transform:uppercase;
+  position:relative;display:inline-block;
+}
+.tagline::before,.tagline::after{
+  content:'──';color:rgba(196,149,42,.4);
+  margin:0 12px;font-size:10px;vertical-align:middle;
+}
+.hero-sub{font-size:12px;color:rgba(247,240,228,.3);letter-spacing:2px;
+  text-transform:uppercase;font-family:'DM Mono',monospace;margin-top:8px;}
+
+/* ── WRAPPER ── */
+.wrap{max-width:920px;margin:0 auto;padding:0 40px}
+.section{padding:52px 0;border-bottom:1px solid var(--ivory-dk)}
+.section:last-child{border-bottom:none}
+.sec-label{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:28px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--ivory-dk)}
+
+/* ── COLORS ── */
+.color-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.swatch{border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,.07)}
+.swatch-block{height:72px}
+.swatch-info{background:#fff;padding:10px 12px}
+.swatch-name{font-size:11px;font-weight:500;color:var(--graphite);margin-bottom:2px}
+.swatch-hex{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)}
+.swatch-role{font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.5px;text-transform:uppercase}
+
+/* ── TYPOGRAPHY ── */
+.type-row{display:flex;gap:32px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--ivory-dk)}
+.type-row:first-child{border-top:none;padding-top:0}
+.type-meta{width:130px;flex-shrink:0;padding-top:4px}
+.type-meta-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.type-meta-name{font-size:12px;font-weight:500;color:var(--graphite);margin-bottom:3px}
+.type-meta-use{font-size:11px;color:var(--muted);line-height:1.5}
+.type-specimen{flex:1;border-left:2px solid var(--ivory-dk);padding-left:24px}
+.type-accent{border-color:var(--gold)!important}
+
+/* ── LOGO VARIANTS ── */
+.variant-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.variant-card{border-radius:14px;padding:44px 36px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.variant-dark{background:var(--midnight)}
+.variant-light{background:#fff;border:1px solid var(--ivory-dk)}
+.variant-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+/* ── POSITIONING ── */
+.pullquote{
+  font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;
+  font-size:23px;color:var(--graphite);line-height:1.55;
+  border-left:3px solid var(--gold);padding-left:22px;margin-bottom:36px;
+}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pillar{background:#fff;border:1px solid var(--ivory-dk);border-radius:12px;padding:22px 20px}
+.pillar-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold-pale);line-height:1;margin-bottom:8px}
+.pillar-title{font-size:13px;font-weight:500;color:var(--graphite);margin-bottom:6px}
+.pillar-body{font-size:12px;color:var(--muted);line-height:1.65}
+
+/* ── BUSINESS CARD ── */
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bcard{border-radius:14px;overflow:hidden;box-shadow:0 6px 28px rgba(0,0,0,.13);aspect-ratio:1.75}
+.bcard-front{
+  background:var(--midnight);width:100%;height:100%;
+  padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+.bcard-front::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 85% 15%,rgba(196,149,42,.08) 0%,transparent 60%);
+}
+.bcard-back{
+  background:var(--ivory);width:100%;height:100%;
+  padding:22px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  border:1px solid var(--ivory-dk);
+}
+.bc-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--ivory);letter-spacing:.5px}
+.bc-title{font-size:9px;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-top:3px}
+.bc-contact{font-family:'DM Mono',monospace;font-size:8.5px;color:rgba(247,240,228,.38);line-height:1.9;margin-top:2px}
+.bc-back-word{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;letter-spacing:8px;text-transform:uppercase;color:var(--midnight);margin-top:10px}
+.bc-back-tag{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:6px;font-family:'DM Sans',sans-serif;font-weight:300}
+
+/* ── APP ICONS ── */
+.icon-row{display:flex;align-items:center;gap:20px}
+.app-icon{border-radius:22%;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.14);flex-shrink:0}
+
+/* ── DATA DISPLAY ── */
+.data-demo{
+  background:var(--midnight);border-radius:14px;padding:28px 30px;
+  font-family:'DM Mono',monospace;
+}
+.data-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(247,240,228,.06)}
+.data-row:last-child{border-bottom:none}
+.data-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,240,228,.3)}
+.data-value{font-size:15px;color:var(--gold);letter-spacing:1px}
+.data-value.verified{color:#1A7A6E}
+.data-header{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,240,228,.2);margin-bottom:16px}
+
+@media(max-width:640px){
+  .color-grid{grid-template-columns:repeat(3,1fr)}
+  .pillar-grid{grid-template-columns:1fr}
+  .card-row{grid-template-columns:1fr}
+  .variant-grid{grid-template-columns:1fr}
+  .wordmark{font-size:38px;letter-spacing:8px}
+  .wrap{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <svg class="logomark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="50,7 85,27.5 85,72.5 50,93 15,72.5 15,27.5" fill="none" stroke="#C4952A" stroke-width="2"/>
+    <polygon points="50,16 76,30.5 76,69.5 50,84 24,69.5 24,30.5" fill="none" stroke="#C4952A" stroke-width="0.6" opacity="0.35"/>
+    <text x="50" y="64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="40" font-weight="300" fill="#C4952A">G</text>
+    <text x="66" y="68" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" fill="#C4952A" opacity="0.65">x</text>
+    <circle cx="50" cy="7" r="3.5" fill="#1A7A6E"/>
+  </svg>
+  <div class="wordmark">Genuix</div>
+  <div class="tagline">Every karat, verified.</div>
+  <div class="hero-sub" style="margin-top:16px">Gold Intelligence Platform · India</div>
+</div>
+
+<div style="background:var(--ivory)">
+<div class="wrap">
+
+  <!-- 01 COLORS -->
+  <div class="section anim" style="animation-delay:.1s">
+    <div class="sec-label">01 — Color palette</div>
+    <div class="color-grid">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#0D1520"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Midnight Ink</div>
+          <div class="swatch-hex">#0D1520</div>
+          <div class="swatch-role">Primary bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#C4952A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">22K Gold</div>
+          <div class="swatch-hex">#C4952A</div>
+          <div class="swatch-role">Brand accent</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#F7F0E4;border-bottom:1px solid #EDE0C8"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ivory</div>
+          <div class="swatch-hex">#F7F0E4</div>
+          <div class="swatch-role">Light bg</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#1A7A6E"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Verified Teal</div>
+          <div class="swatch-hex">#1A7A6E</div>
+          <div class="swatch-role">Certified state</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#E8C06A"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Pale Gold</div>
+          <div class="swatch-hex">#E8C06A</div>
+          <div class="swatch-role">Highlight</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#2E2E2E"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Graphite</div>
+          <div class="swatch-hex">#2E2E2E</div>
+          <div class="swatch-role">Body text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 TYPOGRAPHY -->
+  <div class="section anim" style="animation-delay:.2s">
+    <div class="sec-label">02 — Typography</div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-tag">Display</div>
+        <div class="type-meta-name">Cormorant Garamond</div>
+        <div class="type-meta-use">Logo · hero headlines · pull quotes</div>
+      </div>
+      <div class="type-specimen type-accent">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:#0D1520;line-height:1.1">Gold you can trust</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#8A8070;margin-top:8px">The intelligence behind every hallmark stamp</div>
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-tag">Interface</div>
+        <div class="type-meta-name">DM Sans</div>
+        <div class="type-meta-use">UI · body text · CTAs · labels</div>
+      </div>
+      <div class="type-specimen">
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:500;color:#0D1520">Instant purity verification</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:13px;color:#666;margin-top:6px;line-height:1.75;max-width:460px">Point your camera at any piece of jewelry and receive AI-powered purity analysis, BIS hallmark verification, and live MCX-linked valuation in under 3 seconds.</div>
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-tag">Data</div>
+        <div class="type-meta-name">DM Mono</div>
+        <div class="type-meta-use">Purity grades · weights · rates · IDs</div>
+      </div>
+      <div class="type-specimen">
+        <div style="font-family:'DM Mono',monospace;font-size:18px;color:#C4952A;letter-spacing:2.5px">22K · 916 · ₹7,230/g</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:#8A8070;margin-top:8px;letter-spacing:1.5px">HALLMARK ID: BIS-2024-MH-04471 · VERIFIED</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 LOGO VARIANTS -->
+  <div class="section anim" style="animation-delay:.3s">
+    <div class="sec-label">03 — Logo variants</div>
+    <div class="variant-grid">
+      <div class="variant-card variant-dark">
+        <svg width="58" height="58" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,7 85,27.5 85,72.5 50,93 15,72.5 15,27.5" fill="none" stroke="#C4952A" stroke-width="2"/>
+          <polygon points="50,16 76,30.5 76,69.5 50,84 24,69.5 24,30.5" fill="none" stroke="#C4952A" stroke-width="0.6" opacity="0.35"/>
+          <text x="50" y="64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="40" font-weight="300" fill="#C4952A">G</text>
+          <text x="66" y="68" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" fill="#C4952A" opacity="0.65">x</text>
+          <circle cx="50" cy="7" r="3.5" fill="#1A7A6E"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;letter-spacing:9px;color:#F7F0E4;text-transform:uppercase">Genuix</div>
+        <div class="variant-tag" style="color:#555">Dark — Primary</div>
+      </div>
+      <div class="variant-card variant-light">
+        <svg width="58" height="58" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,7 85,27.5 85,72.5 50,93 15,72.5 15,27.5" fill="none" stroke="#0D1520" stroke-width="2"/>
+          <polygon points="50,16 76,30.5 76,69.5 50,84 24,69.5 24,30.5" fill="none" stroke="#0D1520" stroke-width="0.6" opacity="0.25"/>
+          <text x="50" y="64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="40" font-weight="300" fill="#0D1520">G</text>
+          <text x="66" y="68" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" fill="#0D1520" opacity="0.55">x</text>
+          <circle cx="50" cy="7" r="3.5" fill="#1A7A6E"/>
+        </svg>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;letter-spacing:9px;color:#0D1520;text-transform:uppercase">Genuix</div>
+        <div class="variant-tag" style="color:#999">Light — White backgrounds</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.5px">
+      Note: The teal dot at the apex of every logo mark is the Genuix verification signal — it must always appear. Never remove it.
+    </div>
+  </div>
+
+  <!-- 04 POSITIONING -->
+  <div class="section anim" style="animation-delay:.35s">
+    <div class="sec-label">04 — Brand positioning</div>
+    <div class="pullquote">
+      "Genuix is the trust layer for India's jewelry economy — where every gram is authenticated, every transaction is transparent, and every shop owner becomes digitally empowered."
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Genuine</div>
+        <div class="pillar-body">Real gold, real hallmarks, real valuations. No guesswork, no manual errors, no cheating. We are the proof of authenticity.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Intelligent</div>
+        <div class="pillar-body">AI that understands karats, making charges, and MCX rates — built by someone who handled gold themselves. Domain knowledge embedded in every feature.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Empowering</div>
+        <div class="pillar-body">Small jewelers deserve the same digital tools as Tanishq. Every shop, every town, every karat — verified and valued fairly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 BUSINESS CARD -->
+  <div class="section anim" style="animation-delay:.4s">
+    <div class="sec-label">05 — Application · Business card</div>
+    <div class="card-row">
+      <div class="bcard">
+        <div class="bcard-front">
+          <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,7 85,27.5 85,72.5 50,93 15,72.5 15,27.5" fill="none" stroke="#C4952A" stroke-width="3"/>
+            <text x="50" y="64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="40" font-weight="300" fill="#C4952A">G</text>
+            <circle cx="50" cy="7" r="4" fill="#1A7A6E"/>
+          </svg>
+          <div>
+            <div class="bc-name">Sabarigiri · Founder & CEO</div>
+            <div class="bc-title">Genuix · Gold Intelligence</div>
+            <div class="bc-contact">genuix.ai<br>hello@genuix.ai</div>
+          </div>
+        </div>
+      </div>
+      <div class="bcard">
+        <div class="bcard-back">
+          <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,7 85,27.5 85,72.5 50,93 15,72.5 15,27.5" fill="none" stroke="#C4952A" stroke-width="2.5"/>
+            <polygon points="50,16 76,30.5 76,69.5 50,84 24,69.5 24,30.5" fill="none" stroke="#C4952A" stroke-width="0.7" opacity="0.4"/>
+            <text x="50" y="64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="40" font-weight="300" fill="#C4952A">G</text>
+            <circle cx="50" cy="7" r="3.5" fill="#1A7A6E"/>
+          </svg>
+          <div class="bc-back-word">Genuix</div>
+          <div class="bc-back-tag">Every karat, verified.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 DATA UI PREVIEW -->
+  <div class="section anim" style="animation-delay:.45s">
+    <div class="sec-label">06 — UI language · Data display</div>
+    <div class="data-demo">
+      <div class="data-header">Genuix · Verification Report · Live</div>
+      <div class="data-row">
+        <span class="data-label">Purity</span>
+        <span class="data-value">22 Karat · 916</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">Weight</span>
+        <span class="data-value">8.42 g</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">MCX Rate</span>
+        <span class="data-value">₹7,230 / gram</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">Estimated Value</span>
+        <span class="data-value">₹60,877</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">BIS Hallmark</span>
+        <span class="data-value verified">● Verified · BIS-2024-MH-04471</span>
+      </div>
+      <div class="data-row">
+        <span class="data-label">Confidence</span>
+        <span class="data-value verified">98.4% · Genuine</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 APP ICONS -->
+  <div class="section anim" style="animation-delay:.5s">
+    <div class="sec-label">07 — App icon · Scale</div>
+    <div class="icon-row">
+      <div class="app-icon">
+        <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" fill="#0D1520"/>
+          <polygon points="40,7 66,22.5 66,57.5 40,73 14,57.5 14,22.5" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+          <polygon points="40,14 60,25.5 60,54.5 40,66 20,54.5 20,25.5" fill="none" stroke="#C4952A" stroke-width="0.5" opacity="0.35"/>
+          <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="300" fill="#C4952A">G</text>
+          <circle cx="40" cy="7" r="3" fill="#1A7A6E"/>
+        </svg>
+      </div>
+      <div class="app-icon">
+        <svg width="56" height="56" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" fill="#0D1520"/>
+          <polygon points="40,7 66,22.5 66,57.5 40,73 14,57.5 14,22.5" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+          <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="300" fill="#C4952A">G</text>
+          <circle cx="40" cy="7" r="3" fill="#1A7A6E"/>
+        </svg>
+      </div>
+      <div class="app-icon">
+        <svg width="40" height="40" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" fill="#0D1520"/>
+          <polygon points="40,7 66,22.5 66,57.5 40,73 14,57.5 14,22.5" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+          <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="300" fill="#C4952A">G</text>
+          <circle cx="40" cy="7" r="3" fill="#1A7A6E"/>
+        </svg>
+      </div>
+      <div class="app-icon">
+        <svg width="28" height="28" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <rect width="80" height="80" fill="#0D1520"/>
+          <polygon points="40,7 66,22.5 66,57.5 40,73 14,57.5 14,22.5" fill="none" stroke="#C4952A" stroke-width="2"/>
+          <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="30" font-weight="300" fill="#C4952A">G</text>
+          <circle cx="40" cy="7" r="4" fill="#1A7A6E"/>
+        </svg>
+      </div>
+      <div style="margin-left:8px">
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:1px;line-height:2.2">
+          80×80 · 56×56 · 40×40 · 28×28<br>
+          Dark bg #0D1520 + 22K Gold mark<br>
+          Teal dot = always present<br>
+          Border radius 22%
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div style="background:var(--midnight);padding:28px 40px;text-align:center">
+  <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:rgba(247,240,228,.2);text-transform:uppercase">
+    Genuix Brand Identity v1.0 · Confidential · genuix.ai
+  </div>
+</div>
+
+<script>
+const sections=document.querySelectorAll('.anim');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.animationPlayState='running'}});
+},{threshold:.1});
+sections.forEach(s=>{s.style.animationPlayState='paused';io.observe(s)});
+</script>
+</body>
+</html>
